@@ -18,11 +18,10 @@
 //
 // Execute `rustlings hint box1` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 #[derive(PartialEq, Debug)]
 pub enum List {
-    Cons(i32, List),
+    // 用 Box<List> 把“下一个节点”放到堆上，指针大小固定，递归问题消失。
+    Cons(i32, Box<List>),
     Nil,
 }
 
@@ -35,11 +34,11 @@ fn main() {
 }
 
 pub fn create_empty_list() -> List {
-    todo!()
+    List::Nil
 }
 
 pub fn create_non_empty_list() -> List {
-    todo!()
+    List::Cons(42, Box::new(List::Nil))
 }
 
 #[cfg(test)]
