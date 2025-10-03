@@ -2,7 +2,6 @@
     single linked list merge
     This problem requires you to merge two ordered singly linked lists into one ordered singly linked list
 */
-// I AM NOT DONE
 
 use std::fmt::{self, Display, Formatter};
 use std::ptr::NonNull;
@@ -103,13 +102,7 @@ impl<T> LinkedList<T> {
             result.push_node(node);
         }
 
-        result;
-
-        Self {
-            length: 0,
-            start: None,
-            end: None,
-        }
+        result
     }
 
     // 辅助方法：取出链表的第一个节点
